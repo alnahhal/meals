@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::resource('vendors', App\Http\Controllers\VendorController::class);
 Route::resource('meals', App\Http\Controllers\MealController::class);
 
+Route::get('dashboard', function() 
+{
+    return view('admin');
+})->name('dashboard');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
