@@ -81,5 +81,7 @@
             @yield('content')
         </main>
     </div>
+   
 </body>
 </html>
+@yield('styles')
