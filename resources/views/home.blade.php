@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="container">
+<div class="container my-5">
     <div class="row">
     @foreach($meals as $meal)
         <div class="col-sm-12 col-md-6 col-lg-4 my-3">
@@ -33,6 +33,70 @@
    @endforeach
     </div>
 </div>
+<br><br><br>
+<!-- Footer -->
+<footer class="footer-20192">
+      <div class="site-section">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-sm">
+              <a href="/home" class="footer-logo">Meals</a>
+              <p class="copyright">
+                <small>&copy; 2023</small>
+              </p>
+              
+            </div>
+            <div class="col-sm">
+              <h3>Open Hours</h3>
+              <ul class="list-unstyled links">
+              <li class="d-flex"><span style="margin-right:64px;">Monday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:62px;">Tuesday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:38px;">Wednesday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:54px;">Thursday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:76px;">Friday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:56px;">Saturday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:66px;">Sunday</span><span> 10:00 - 22:00</span></li>
+                
+                
+              </ul>
+            </div>
+            <div class="col-sm">
+              <ul class="list-unstyled links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">About</a></li>
+                <!-- <li><img src="{{asset('photos/traditional-lunch.jpg')}}" alt=""></li> -->
+                <a href="#" class="thumb-menu img" style="background-image: url('photos/traditional-lunch.jpg');width: 100%; height: 200px;
+                display: block;background-position: center;
+                background-size: cover;">
+</a>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="fa-brands fa-facebook-f"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-linkedin-in"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-telegram"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+        <br><br>
+        <div class="text-center p-3">
+       © 2023 Copyright:
+       <a class="text-white" href="#">Meals project iti</a>
+      </div>
+      </div>
+    </footer>
+
+
+
+<!-- Footer -->
 @endsection
 
 @section('styles')
@@ -80,6 +144,79 @@
     margin-left:10px;
     margin-top:6px;
 }
+
+
+.footer-20192 {
+  position: relative;
+  color: #fff;
+  padding: 7rem 4rem 0 0;
+  background-color: #141313; }
+  .footer-20192 .container {
+    position: relative; }
+  .footer-20192 h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.5; }
+  .footer-20192 .links li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: block; }
+    .footer-20192 .links li a {
+      color: #666873; }
+      .footer-20192 .links li a:hover {
+        color: #fff; }
+  .footer-20192 .social li {
+    display: inline-block;
+    position: relative; }
+    .footer-20192 .social li a {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      background-color: #8186d5;
+      color: #fff; }
+      .footer-20192 .social li a > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+  .footer-20192 .footer-logo {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .1rem; }
+  .footer-20192 .copyright {
+    color: #666873; }
+  .footer-20192 .cta {
+    -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    padding: 20px;
+    background-color: #8186d5;
+    top: -150px;
+    position: relative; }
+    .footer-20192 .cta h2, .footer-20192 .cta h3 {
+      line-height: 1.5; }
+    .footer-20192 .cta h3 {
+      font-size: 20px; }
+
+    .footer a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  .footer a, .footer a:hover {
+    text-decoration: none !important; }
+
+.footer .content {
+  height: 70vh; }
+
+ 
+
 
         
     </style>
