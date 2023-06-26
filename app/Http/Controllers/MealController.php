@@ -56,7 +56,7 @@ class MealController extends Controller
             $path=$request->file('image')->storeAs($destination_path,$image_name);
             $meal['image']=$image_name;
             }
-        
+
         if ($meal->save())
             return to_route('meals.index')->with('success', 'Meal created successfully');
     }
