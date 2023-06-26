@@ -12,16 +12,18 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
+    @if (auth()->check() && auth()->user()->is_admin == 0)
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -29,12 +31,15 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('vendors.create') }}">Add New Vendor</a>
+                            <a class="nav-link icon" href="{{url('/home')}}">Home</a>
+                        </li>
+                    <li class="nav-item">
+                            <a class="nav-link icon" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <!-- <a class="nav-link" href="{{ route('meals.create') }}">Add New Meal</a> -->
+                            <a class="nav-link icon" href="#">Contact</a>
                         </li>
                     </ul>
 
@@ -76,10 +81,80 @@
                 </div>
             </div>
         </nav>
+        @endif
+        @if (auth()->check() && auth()->user()->is_admin == 1)
+       
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <main class="py-4">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                            <a class="nav-link icon" href="{{url('/home')}}">Home</a>
+                        </li>
+                    <li class="nav-item">
+                            <a class="nav-link icon" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link icon" href="#">Dashboard</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        @endif
+        <main>
             @yield('content')
         </main>
+        
     </div>
+    <script src="{{ asset('js/all.js') }}"></script>
 </body>
 </html>
+@yield('styles')
