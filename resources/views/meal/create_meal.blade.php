@@ -2,10 +2,10 @@
 
 @section('content')
 <style>
-body,
+/* body,
 html {
     height: 100%;
-}
+} */
 
 * {
     box-sizing: border-box;
@@ -28,7 +28,7 @@ h4 {
     position: absolute;
     right: 50px;
     margin: 20px;
-    height: 95%;
+    /* height: 95%; */
     width: 40%;
     padding: 16px;
     background-color: white;
@@ -47,7 +47,7 @@ h4 {
     </div>
     <div class="mb-1">
         {!! Form::label('price', 'Price', ['class' => 'form-label']) !!}
-        {!! Form::text('price', null, ['class' => 'form-control']) !!}
+        {!! Form::number('price', null, ['class' => 'form-control', 'min' => '1']) !!}
     </div>
     <div class="mb-1">
         {!! Form::label('preparation_time', 'Preparation Time', ['class' => 'form-label']) !!}
@@ -59,7 +59,7 @@ h4 {
     </div>
     <div class="mb-3">
         {!! Form::label('vendor_id', 'Vendor Name', ['class' => 'form-label']) !!}
-        <select name="vendor_id" class="form-control" placeholder='plz select vendor...'>
+        <select name="vendor_id" class="form-control">
             <option value="">Select Vendor</option>
             @foreach($vendors as $vendor)
             <option value="{{$vendor->id}}">{{$vendor->name}}</option>
@@ -67,7 +67,7 @@ h4 {
         </select>
     </div>
     <div class="mb-1">
-        {!! Form::label('image', 'Meal Image:', ['class' => 'form-label']) !!}
+        {!! Form::label('image', 'Image:', ['class' => 'form-label']) !!}
         {!! Form::file('image', null,['class' => 'form-control'], $attributes = []) !!}
     </div>
     {!! Form::submit('Add New Meal', ['class' => 'btn btn-primary form-control btttn']) !!}

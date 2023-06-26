@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vendor;
+use App\Http\Requests\VendorRequest;
 
 class VendorController extends Controller
 {
@@ -34,7 +35,7 @@ class VendorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VendorRequest $request)
     {
         $vendor = new Vendor($request->all());
         if ($vendor->save())
@@ -70,7 +71,7 @@ class VendorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vendor $vendor)
+    public function update(VendorRequest $request, Vendor $vendor)
     {
         if ($vendor->update($request->all()))
         return to_route('vendors.index');

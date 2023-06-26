@@ -31,20 +31,24 @@
             {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
-        <!-- @error('name')
+        @error('name')
     <div class="alert alert-danger">{{ $message }}</div>
-@enderror -->
+@enderror
         <div class="mb-3">
             {!! Form::label('address', 'Address', ['class' => 'form-label']) !!}
             {!! Form::text('address', null, ['class' => 'form-control']) !!}
         </div>
-        <!-- @error('description')
+        @error('address')
     <div class="alert alert-danger">{{ $message }}</div>
-@enderror -->
-        <div class="mb-3">
-            {!! Form::label('phone', 'Phone Number', ['class' => 'form-label']) !!}
+@enderror
+{!! Form::label('phone', 'Phone Number', ['class' => 'form-label']) !!}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">+02</span>
             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
         </div>
+        @error('phone')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
         {!! Form::submit('Add New Vendor', ['class' => 'btn btn-primary form-control']) !!}
         {!! Form::close() !!}
         </div>

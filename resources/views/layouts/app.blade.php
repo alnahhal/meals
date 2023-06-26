@@ -34,7 +34,7 @@
                             <a class="nav-link" href="{{ route('vendors.create') }}">Add New Vendor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('meals.create') }}">Add New Meal</a>
+                            <!-- <a class="nav-link" href="{{ route('meals.create') }}">Add New Meal</a> -->
                         </li>
                     </ul>
 

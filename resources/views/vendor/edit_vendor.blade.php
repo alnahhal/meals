@@ -29,20 +29,23 @@
             {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
-        <!-- @error('name')
+        @error('name')
     <div class="alert alert-danger">{{ $message }}</div>
-@enderror -->
+@enderror
         <div class="mb-3">
             {!! Form::label('address', 'Address', ['class' => 'form-label']) !!}
             {!! Form::text('address', null, ['class' => 'form-control']) !!}
         </div>
-        <!-- @error('description')
+        @error('address')
     <div class="alert alert-danger">{{ $message }}</div>
-@enderror -->
+@enderror
         <div class="mb-3">
             {!! Form::label('phone', 'Phone Number', ['class' => 'form-label']) !!}
             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
         </div>
+        @error('phone')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
         {!! Form::submit('Update', ['class' => 'btn btn-success form-control']) !!}
         {!! Form::close() !!}
         </div>
