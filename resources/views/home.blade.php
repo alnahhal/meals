@@ -25,6 +25,7 @@
                     <h3 class="card-title">{{$meal->title}}</h3>
                     <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
                     <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
+                    <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                     <br>
                     <a href="#" class="btn btn-primary click">Order now</a>
                 </div>
