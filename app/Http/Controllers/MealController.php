@@ -57,6 +57,7 @@ class MealController extends Controller
             $meal['image']=$image_name;
             }
 
+
         if ($meal->save())
             return to_route('meals.index')->with('success', 'Meal created successfully');
     }
