@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -8,6 +9,7 @@
 
          Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -18,24 +20,341 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            .section{
+                background-image: url("photos/2.jpg");
+                background-position: center;
+                background-size: cover;
+                width:100% ;
+                height: 690px;
+            }
+            .product-img {
+               height: 330px; /* set the desired height here */
+               object-fit: cover; /* scale and crop the image to fit */
+            }
+            .chef{
+                margin-top:160px;
+            }
+            .second{
+                box-shadow: 2px 2px 5px rgba(0.3, 0.3, 0.3, 0.3);
+                margin-top:85px;
+                width:500px;
+                padding:5px 9px;
+                border-radius:3px;
+               
+            }
+            .service{
+              margin-top:180px;
+              text-align:center;
+              margin-bottom:100px;
+            }
+            .my-icon {
+              font-size: 33px;
+              margin-bottom:20px;
+              
+            }
+            .footer-20192 {
+  position: relative;
+  color: #fff;
+  padding: 7rem 4rem 0 0;
+  background-color: #141313; }
+  .footer-20192 .container {
+    position: relative; }
+  .footer-20192 h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.5; }
+  .footer-20192 .links li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: block; }
+    .footer-20192 .links li a {
+      color: #666873; }
+      .footer-20192 .links li a:hover {
+        color: #fff; }
+  .footer-20192 .social li {
+    display: inline-block;
+    position: relative; }
+    .footer-20192 .social li a {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      background-color: #8186d5;
+      color: #fff; }
+      .footer-20192 .social li a > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+  .footer-20192 .footer-logo {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .1rem; }
+  .footer-20192 .copyright {
+    color: #666873; }
+  .footer-20192 .cta {
+    -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    padding: 20px;
+    background-color: #8186d5;
+    top: -150px;
+    position: relative; }
+    .footer-20192 .cta h2, .footer-20192 .cta h3 {
+      line-height: 1.5; }
+    .footer-20192 .cta h3 {
+      font-size: 20px; }
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    .footer a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  .footer a, .footer a:hover {
+    text-decoration: none !important; }
+
+.footer .content {
+  height: 70vh; }
 
             
+
+
+        </style>
+    </head>
+    <body >
+    <div class="section">
+            <div id="app">
+        <nav  class="navbar navbar-expand-md navbar-light shadow-sm">
+            <div class="container">
+               
+            <a class="navbar-brand" href="#">
+            <!-- <img src="photos/Chef-restaurant-logo-by-DEEMKA-STUDIO-4-580x348.jpg" alt="Logo" width="90" height="70" class="d-inline-block "> -->
+                <span style="color:white;font-size:2.2rem;font-weight: bold;letter-spacing: 2px">Meals</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a style="color:white;font-size:1.1rem;margin-right:5px" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a style="color:white;font-size:1.1rem;"  class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                            @endguest
+                            </ul>
+                </div>
+                </div>
+                </nav>
+        </div>
+
+        
+
+        </div>
+        
+        <div class="container my-5">
+            <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-3" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card h-100">
+            <img height="250px" width="100px" src="photos/Roast-chicken.jpg" class="card-img-top product-img" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title" style="color:#d7973c;">Grilled chicken</h2>
+                    <p style="font-size:16px;" class="card-text">From the finest types of chicken grilled on charcoal with BBQ sauce</p>
+                </div>
+            </div>
+            </div>
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-3" data-aos="fade-up">
+            <div class="card h-100">
+            <img height="250px" width="100px" src="photos/Ingredientes-Waraq-el-Enab.jpg" class="card-img-top product-img" alt="...">
+                <div class="card-body">
+                <h2 class="card-title" style="color:#d7973c;">Mahshy</h2>
+                    <p style="font-size:16px;" class="card-text">Stuffed fresh grape leaves with lemon sauce</p>
+                </div>
+            </div>
+            </div>
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4 my-3" data-aos="fade-up">
+            <div class="card h-100">
+            <img height="250px" width="100px" src="photos/26-06-22-215672689.jpg" class="card-img-top product-img" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title" style="color:#d7973c;">Kapsa</h2>
+                    <p style="font-size:16px;" class="card-text"> Vey delicious rice dish made with lamb</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+<div class="chef">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <img style="width:100%;height:100%;" src="photos/Gormet-cooking.jpg" data-aos="fade-right" data-aos-duration="3000" alt="">
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-left" data-aos-duration="3000">
+                    <div class="second">
+                    <h2  style="color:#d7973c;">Good Quality</h2>
+                    <br>
+                    <p>
+                    We offer you the finest types of food because we fear for your health,<br> we have many skilled chefs, we assure you that you will enjoy with us</p>
+                    Not every dish is going to appeal to the market. Not every theme is going to get a standing ovation. Not every flavour combination is going to be <br> an absolute winner. And that’s okay.
+                    What matters is that we tried, and we gave it our all.
+                </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="service ">
+        <h2 style="color:#c8a97e;font-family:Great Vibes, cursive;font-size:40px;">Services</h2>
+        <br><br>
+            <div class="container">
+                <div class="row">
+                   
+                <div class="col-lg-4 col-md-4 col-sm-12 my-2" >
+                <div class="card h-100">
+                <div class="card-body">
+                <i class="fa-solid fa-bowl-food my-icon"  style="color: #c8a97e;"></i>
+                <h2 class="card-title" style="color:#c8a97e;">Wedding Party</h2>
+                <p >We will provide you with the finest types of food. We will offer you different types of meat, chicken and sweets</p>
+                </div>
+            </div>
+                
+                   
+
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 my-2">
+                <div class="card h-100">
+                <div class="card-body">
+                <i class="fa-solid fa-cake-candles my-icon" style="color: #c8a97e;"></i>
+                <h2 class="card-title" style="color:#c8a97e;">Birthday Party</h2>
+                <p >We will provide you with the finest types of food. We will offer you different types of meat, chicken and sweets</p>
+                </div>
+            </div>
+
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 my-2">
+                <div class="card h-100">
+                <div class="card-body">
+                <i class="fa-solid fa-utensils my-icon" style="color: #c8a97e;"></i>
+                <h2 class="card-title" style="color:#c8a97e;"> Feast</h2>
+                <p >We will provide you with the finest types of food. We will offer you different types of meat, chicken and sweets</p>
+                </div>
+            </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Footer -->
+<footer class="footer-20192">
+      <div class="site-section">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-sm">
+              <a href="/home" class="footer-logo">Meals</a>
+              <p class="copyright">
+                <small>&copy; 2023</small>
+              </p>
+              
+            </div>
+            <div class="col-sm">
+              <h3>Open Hours</h3>
+              <ul class="list-unstyled links">
+              <li class="d-flex"><span style="margin-right:64px;">Monday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:62px;">Tuesday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:38px;">Wednesday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:54px;">Thursday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:76px;">Friday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:56px;">Saturday</span><span>10:00 - 22:00</span></li>
+              <li class="d-flex"><span style="margin-right:66px;">Sunday</span><span> 10:00 - 22:00</span></li>
+                
+                
+              </ul>
+
+            </div>
+            <div class="col-sm">
+              <ul class="list-unstyled links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">About</a></li>
+                <!-- <li><img src="{{asset('photos/traditional-lunch.jpg')}}" alt=""></li> -->
+                <a href="#" class="thumb-menu img" style="background-image: url('photos/traditional-lunch.jpg');width: 100%; height: 200px;
+                display: block;background-position: center;
+                background-size: cover;">
+</a>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="fa-brands fa-facebook-f"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-linkedin-in"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-telegram"></span></a></li>
+                <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
+              </ul>
+              <p><i class="fa-solid fa-phone mx-1" style="color: #ffffff;"></i> 01026549864</p>
+              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> tastymeals02@gmail.com</p>
+            </div>
+            
+          </div>
+        </div>
+        <br><br>
+        <div class="text-center p-3">
+       © 2023 Copyright:
+       <a class="text-white" href="#">Meals project iti</a>
+      </div>
+      </div>
+    </footer>
+
+
+
+<!-- Footer -->
+       
+
+
+
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        offset: 200,
+        duration: 3000,
+        easing: 'ease-in-out'
+    });
+  </script>
     </body>
 </html>
+
