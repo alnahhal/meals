@@ -98,6 +98,7 @@ body::before {
 }
 .card{
     margin-top:150px;
+    height:;
 }
 .click{
     background: #c8a97e;
@@ -112,13 +113,14 @@ body::before {
 .card-header{
     color:#c8a97e;
     font-family: 'Kalam', cursive;
-    font-size:23px;
+    font-size:26px;
 }
 .click:hover{
     color: #c8a97e;
     border: 1px solid #c8a97e;
     background: #fff;
 }
+
 
 
 
