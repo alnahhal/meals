@@ -38,10 +38,10 @@
                             <a class="nav-link icon" href="{{url('/home')}}">Home</a>
                         </li>
                     <li class="nav-item">
-                            <a class="nav-link icon" href="#">About</a>
+                            <a class="nav-link icon" href="#">Chefs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link icon" href="#">Contact</a>
+                            <a class="nav-link icon" href="#">About</a>
                         </li>
                     </ul>
 
@@ -102,10 +102,10 @@
                             <a class="nav-link icon" href="{{url('/home')}}">Home</a>
                         </li>
                     <li class="nav-item">
-                            <a class="nav-link icon" href="#">About</a>
+                            <a class="nav-link icon" href="#">Chefs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link icon" href="#">Contact</a>
+                            <a class="nav-link icon" href="#">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link icon" href="#">Dashboard</a>
