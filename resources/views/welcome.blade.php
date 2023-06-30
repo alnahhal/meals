@@ -18,14 +18,18 @@
 
         <style>
             body {
+                height: 100%;
                 font-family: 'Nunito', sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
             }
             .section{
                 background-image: url("photos/2.jpg");
-                background-position: center;
                 background-size: cover;
                 width:100% ;
                 height: 690px;
+                background-position: center center;
             }
             .product-img {
                height: 330px; /* set the desired height here */
@@ -37,7 +41,7 @@
             .second{
                 box-shadow: 2px 2px 5px rgba(0.3, 0.3, 0.3, 0.3);
                 margin-top:85px;
-                width:500px;
+                width:498px;
                 padding:5px 9px;
                 border-radius:3px;
                
@@ -121,13 +125,15 @@
 .footer .content {
   height: 70vh; }
 
+  
+
             
 
 
         </style>
     </head>
     <body >
-    <div class="section">
+    <div class="section" >
             <div id="app">
         <nav  class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
@@ -147,7 +153,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a style="color:white;font-size:1.1rem;margin-right:5px" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a style="color:white;font-size:1.1rem;margin-right:5px;" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -169,7 +175,7 @@
         
         <div class="container my-5">
             <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 my-3" data-aos="fade-up" data-aos-duration="3000">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-3" data-aos="fade-up">
             <div class="card h-100">
             <img height="250px" width="100px" src="photos/Roast-chicken.jpg" class="card-img-top product-img" alt="...">
                 <div class="card-body">
@@ -207,12 +213,12 @@
 <div class="chef">
         <div class="container my-5">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img style="width:100%;height:100%;" src="photos/Gormet-cooking.jpg" data-aos="fade-right" data-aos-duration="3000" alt="">
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in" >
+                    <img style="width:100%;height:100%;" src="photos/Gormet-cooking.jpg" alt="">
 
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-left" data-aos-duration="3000">
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in" >
                     <div class="second">
                     <h2  style="color:#d7973c;">Good Quality</h2>
                     <br>
@@ -351,7 +357,7 @@
   <script>
     AOS.init({
         offset: 200,
-        duration: 3000,
+        duration: 2000,
         easing: 'ease-in-out'
     });
   </script>
