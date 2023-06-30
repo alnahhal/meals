@@ -38,24 +38,24 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        // $mealStore = $request->all();
-        /*
+        
+        // $meal = new Meal($request->all());
+        // if($request->hasFile('image')){ 
+        //     $destination_path ='public/images/meals';
+        //     $image=$request->file('image');
+        //     $image_name=$image->getClientOriginalName();
+        //     $path=$request->file('image')->storeAs($destination_path,$image_name);
+        //     $meal['image']=$image_name;
+        //     }
+        $meal = new Meal($request->all());
+       
         if($request->hasFile('image')){ 
             $image=$request->file('image');
             // Storage::makeDirectory('public', 777, true);
-            // $path=$image->store('images/meals', ['disk' => 'public']);
-            $path=$image->store('', ['disk' => 'public']);
-            $mealStore['image']=$path;
+            $path=$image->store('images/meals', ['disk' => 'public']);
+            // $path=$image->store('', ['disk' => 'public']);
+            $meal['image']=$path;
         }
-        */
-        $meal = new Meal($request->all());
-        if($request->hasFile('image')){ 
-            $destination_path ='public/images/meals';
-            $image=$request->file('image');
-            $image_name=$image->getClientOriginalName();
-            $path=$request->file('image')->storeAs($destination_path,$image_name);
-            $meal['image']=$image_name;
-            }
 
 
         if ($meal->save())
@@ -94,14 +94,23 @@ class MealController extends Controller
      */
     public function update(Request $request, Meal $meal)
     {
-        $meal->update($request->all());
+        // $meal->update($request->all());
+        // if($request->hasFile('image')){ 
+        //     $destination_path ='public/images/meals';
+        //     $image=$request->file('image');
+        //     $image_name=$image->getClientOriginalName();
+        //     $path=$request->file('image')->storeAs($destination_path,$image_name);
+        //     $meal['image']=$image_name;
+        //     }
+        $meal -> update($request->all());
+       
         if($request->hasFile('image')){ 
-            $destination_path ='public/images/meals';
             $image=$request->file('image');
-            $image_name=$image->getClientOriginalName();
-            $path=$request->file('image')->storeAs($destination_path,$image_name);
-            $meal['image']=$image_name;
-            }
+            // Storage::makeDirectory('public', 777, true);
+            $path=$image->store('images/meals', ['disk' => 'public']);
+            // $path=$image->store('', ['disk' => 'public']);
+            $meal['image']=$path;
+        }
 
         if ($meal->save())
         return to_route('meals.index');
