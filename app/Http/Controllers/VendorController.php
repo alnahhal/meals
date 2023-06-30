@@ -50,7 +50,10 @@ class VendorController extends Controller
      */
     public function show($id)
     {
-        //
+        $vendors = Vendor::with('meal')->where('id', $id)->get();
+        // die(var_dump($vendors[0]->meal));
+        return view('vendor.show_vendor', compact('vendors'));
+        
     }
 
     /**
@@ -86,6 +89,11 @@ class VendorController extends Controller
     public function destroy($id)
     {
         Vendor::destroy($id);
+        // $vendor = Vendor::find($id);
+        // if ($vendor->meal()->count() > 0) {
+        //     return back()->with('error', 'can not delete');
+        // }
+        // $vendor->delete();
         return back()->with('success', 'Vendor has been deleted successfully');
     }
 }

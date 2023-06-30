@@ -1,56 +1,69 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
-@section('content')
 <style>
 .bgfull {
-            background-image: url("/web_images/vendor.png");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            border-radius: 10px;            
-        }
+    background-image: url("/web_images/vendor.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 10px;
+}
 
-        .myForm {
+.myForm {
     padding: 16px;
     background-color: #DBF9FC;
     border-radius: 10px;
 }
 </style>
 
+@section('content')
 <div class="container">
+    <br>
     <h2>Add New Vendor</h2>
     <div class="row">
-        <div class="col-lg-5 d-none d-lg-block bgfull me-3">
+        <div class="col-lg-5 bgfull me-3">
 
         </div>
 
 
         <div class="col-lg-6 myForm">
-        {!! Form::open(['route' => 'vendors.store', 'method' => 'post']) !!}
-        <div class="mb-3">
-            {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-        </div>
-        @error('name')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-        <div class="mb-3">
-            {!! Form::label('address', 'Address', ['class' => 'form-label']) !!}
-            {!! Form::text('address', null, ['class' => 'form-control']) !!}
-        </div>
-        @error('address')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-{!! Form::label('phone', 'Phone Number', ['class' => 'form-label']) !!}
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">+02</span>
-            {!! Form::text('phone', null, ['class' => 'form-control']) !!}
-        </div>
-        @error('phone')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-        {!! Form::submit('Add New Vendor', ['class' => 'btn btn-primary form-control']) !!}
-        {!! Form::close() !!}
+            {!! Form::open(['route' => 'vendors.store', 'method' => 'post']) !!}
+            
+            <div class="mb-3">
+                {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
+                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                @error('name')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                {!! Form::label('address', 'Address', ['class' => 'form-label']) !!}
+                {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                @error('address')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            {!! Form::label('phone', 'Phone Number', ['class' => 'form-label']) !!}
+            <div class="input-group mb-3">
+                <span class="input-group-text">+02</span>
+                {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+            </div>
+            @error('phone')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="mb-3">
+                {!! Form::label('description', 'Description', ['class' => 'form-label']) !!}
+                {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) !!}
+                @error('description')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            {!! Form::submit('Add New Vendor', ['class' => 'btn btn-primary form-control']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

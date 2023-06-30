@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Vendor extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'address', 'phone'];
+    protected $fillable = ['name', 'address', 'phone', 'description'];
 
-    public function meals(){
+    public function meal(){
         return $this->hasMany(Meal::class);
     }
 }

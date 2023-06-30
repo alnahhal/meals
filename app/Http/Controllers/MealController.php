@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Meal;
 use App\Models\Vendor;
+use App\Http\Requests\MealRequest;
 
 class MealController extends Controller
 {
@@ -15,7 +16,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+        $meals = Meal::with('vendor')->get();
+        // die(var_dump($meals));
         return view('meal.index_meal', compact('meals'));
     }
 
@@ -36,27 +38,18 @@ class MealController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MealRequest $request)
     {
-        // $mealStore = $request->all();
-        /*
+        
+        $meal = new Meal($request->all());
         if($request->hasFile('image')){ 
             $image=$request->file('image');
             // Storage::makeDirectory('public', 777, true);
-            // $path=$image->store('images/meals', ['disk' => 'public']);
-            $path=$image->store('', ['disk' => 'public']);
-            $mealStore['image']=$path;
+            $path=$image->store('images/meals', ['disk' => 'public']);
+            // $path=$image->store('', ['disk' => 'public']);
+            $meal['image']=$path;
         }
-        */
-        $meal = new Meal($request->all());
-        if($request->hasFile('image')){ 
-            $destination_path ='public/images/meals';
-            $image=$request->file('image');
-            $image_name=$image->getClientOriginalName();
-            $path=$request->file('image')->storeAs($destination_path,$image_name);
-            $meal['image']=$image_name;
-            }
-        
+
         if ($meal->save())
             return to_route('meals.index')->with('success', 'Meal created successfully');
     }
@@ -91,16 +84,18 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Meal $meal)
+    public function update(MealRequest $request, Meal $meal)
     {
+
         $meal->update($request->all());
+        
         if($request->hasFile('image')){ 
-            $destination_path ='public/images/meals';
             $image=$request->file('image');
-            $image_name=$image->getClientOriginalName();
-            $path=$request->file('image')->storeAs($destination_path,$image_name);
-            $meal['image']=$image_name;
-            }
+            // Storage::makeDirectory('public', 777, true);
+            $path=$image->store('images/meals', ['disk' => 'public']);
+            // $path=$image->store('', ['disk' => 'public']);
+            $meal['image']=$path;
+        }
 
         if ($meal->save())
         return to_route('meals.index');
