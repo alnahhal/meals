@@ -14,17 +14,18 @@
 </div>
 </div>
 
-
+@if (auth()->check() && auth()->user()->is_admin == 0)
 <div class="container my-5">
     <div class="row">
     @foreach($meals as $meal)
         <div class="col-sm-12 col-md-6 col-lg-4 my-3">
             <div class="card h-100">
-            <img height="250px" width="100px" src="{{asset('/storage/images/meals/'.$meal->image)}}" class="card-img-top product-img" alt="...">
+            <img height="250px" width="100px" src="{{asset('/storage/'.$meal->image)}}" class="card-img-top product-img" alt="...">
                 <div class="card-body">
                     <h3 class="card-title">{{$meal->title}}</h3>
                     <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
                     <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
+                    <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                     <br>
                     <a href="#" class="btn btn-primary click">Order now</a>
                 </div>
@@ -34,6 +35,31 @@
     </div>
 </div>
 <br><br><br>
+@endif
+
+@if (auth()->check() && auth()->user()->is_admin == 1)
+<div class="container my-5">
+    <div class="row">
+    @foreach($meals as $meal)
+        <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+            <div class="card h-100">
+            <img height="250px" width="100px" src="{{asset('/storage/'.$meal->image)}}" class="card-img-top product-img" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">{{$meal->title}}</h3>
+                    <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
+                    <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
+                    <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
+                </div>
+            </div>
+        </div>
+   @endforeach
+    </div>
+</div>
+<br><br><br>
+@endif
+
+
+
 <!-- Footer -->
 <footer class="footer-20192">
       <div class="site-section">
@@ -104,6 +130,12 @@
 
 @section('styles')
     <style>
+      body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
         .back{
             background-image:url('photos/background.jpg');
             background-position: center;

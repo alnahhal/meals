@@ -41,7 +41,16 @@ class MealController extends Controller
     public function store(MealRequest $request)
     {
         
+        // $meal = new Meal($request->all());
+        // if($request->hasFile('image')){ 
+        //     $destination_path ='public/images/meals';
+        //     $image=$request->file('image');
+        //     $image_name=$image->getClientOriginalName();
+        //     $path=$request->file('image')->storeAs($destination_path,$image_name);
+        //     $meal['image']=$image_name;
+        //     }
         $meal = new Meal($request->all());
+       
         if($request->hasFile('image')){ 
             $image=$request->file('image');
             // Storage::makeDirectory('public', 777, true);
@@ -86,9 +95,16 @@ class MealController extends Controller
      */
     public function update(MealRequest $request, Meal $meal)
     {
-
-        $meal->update($request->all());
-        
+        // $meal->update($request->all());
+        // if($request->hasFile('image')){ 
+        //     $destination_path ='public/images/meals';
+        //     $image=$request->file('image');
+        //     $image_name=$image->getClientOriginalName();
+        //     $path=$request->file('image')->storeAs($destination_path,$image_name);
+        //     $meal['image']=$image_name;
+        //     }
+        $meal -> update($request->all());
+       
         if($request->hasFile('image')){ 
             $image=$request->file('image');
             // Storage::makeDirectory('public', 777, true);

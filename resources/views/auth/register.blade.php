@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+        <div class="col-lg-5 col-md-7 col-sm-7">
+            <div class="card mx-auto">
+                <div class="card-header text-center">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -94,7 +94,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="click">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -110,6 +110,50 @@
 
 @section('styles')
     <style>
+        body {
+    position: relative;
+  background-image: url('photos/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.4); /* Optional: Add a semi-transparent overlay */
+}
+
+.card{
+    margin-top:150px;
+}
+.click{
+    background: #c8a97e;
+    border: 1px solid #c8a97e;
+    color: #fff;
+    font-size:16px;
+    padding:5px 13px;
+    border-radius: 5px;
+    font-size:16px;
+
+}
+.card-header{
+    color:#c8a97e;
+    font-family: 'Kalam', cursive;
+    font-size:26px;
+}
+.click:hover{
+    color: #c8a97e;
+    border: 1px solid #c8a97e;
+    background: #fff;
+}
         
     </style>
 @endsection
