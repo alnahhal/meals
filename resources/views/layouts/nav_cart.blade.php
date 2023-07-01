@@ -47,9 +47,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
-                        </a>
+                    
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -155,11 +153,6 @@
         </nav>
         @endif
 
-        @if(session('success'))
-        <div class="alert alert-success">
-          {{ session('success') }}
-        </div> 
-        @endif
         <main>
             @yield('content')
         </main>

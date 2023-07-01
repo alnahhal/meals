@@ -68,7 +68,7 @@ h4 {
     <div class="mb-1">
         {!! Form::label('image', 'Meal Image:', ['class' => 'form-label']) !!}
         {!! Form::file('image', null,['class' => 'form-control'], $attributes = []) !!}
-        <img style="border-radius:10px;" width="70px" height="70px" src="{{asset('/storage/images/meals/'.$meal->image)}}"/>
+        <img style="border-radius:10px;" width="70px" height="70px" src="{{asset('/storage/'.$meal->image)}}"/>
     </div>
     {!! Form::submit('Update Meal', ['class' => 'btn btn-success form-control']) !!}
     {!! Form::close() !!}

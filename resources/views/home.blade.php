@@ -20,14 +20,20 @@
     @foreach($meals as $meal)
         <div class="col-sm-12 col-md-6 col-lg-4 my-3">
             <div class="card h-100">
-            <img height="250px" width="100px" src="{{asset('/storage/images/meals/'.$meal->image)}}" class="card-img-top product-img" alt="...">
+            <img height="250px" width="100px" src="{{asset('/storage/'.$meal->image)}}" class="card-img-top product-img" alt="...">
                 <div class="card-body">
                     <h3 class="card-title">{{$meal->title}}</h3>
                     <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
+             
+                   
                     <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
                     <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                     <br>
-                    <a href="#" class="btn btn-primary click">Order now</a>
+                    <form action="{{route('add_to_cart',$meal->id)}}" method="POST">
+                      @csrf
+                      <input class="btn btn-danger" type="number"  value="1" name="quantity"  min="1">
+                      <input type="submit" value="Order Now" class="btn btn-primary click">
+                  </form>
                 </div>
             </div>
         </div>

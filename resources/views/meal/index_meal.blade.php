@@ -28,7 +28,7 @@ h5 {
 @foreach($meals as $meal)
   <div class="col">
     <div class="card h-100">
-      <img height="250px" width="100px" src="{{ Storage::url('images/meals/' . $meal->image) }}" class="card-img-top" alt="...">
+      <img height="250px" width="100px" src="{{ asset('/storage/'.$meal->image) }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{$meal->title}}</h5>
         <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>ج.م</b></p>
