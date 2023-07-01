@@ -26,9 +26,9 @@
         @if (auth()->check() && auth()->user()->is_admin == 0)
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <p class="navbar-brand">
                     <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
-                </a>
+</p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -42,7 +42,7 @@
                             <a class="nav-link icon" href="{{url('/home')}}">Home</a>
                         </li>
                     <li class="nav-item">
-                            <a class="nav-link icon" href="#">Chefs</a>
+                            <a class="nav-link icon" href="{{url('/chef')}}">Chefs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link icon" href="#">About</a>
@@ -92,9 +92,9 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <p class="navbar-brand">
                     <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
-                </a>
+</p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -108,7 +108,7 @@
                             <a class="nav-link icon" href="{{url('/home')}}">Home</a>
                         </li>
                     <li class="nav-item">
-                            <a class="nav-link icon" href="#">Chefs</a>
+                            <a class="nav-link icon" href="{{url('/chef')}}">Chefs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link icon" href="#">About</a>

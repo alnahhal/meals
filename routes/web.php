@@ -24,6 +24,13 @@ Route::get('dashboard', function()
 {
     return view('admin');
 })->name('dashboard');
+
+
+Route::get('chef',[App\Http\Controllers\ChefController::class, 'index']);
+
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
