@@ -27,8 +27,7 @@
             <img height="250px" width="100px" src="photos/Gormet-cooking.jpg" class="card-img-top product-img" alt="...">
                 <div class="card-body">
                     <h2 style="color:#bb9661;" class="card-title">{{$vendor->name}}</h2>
-                    <br>
-                    <p class="card-text">{{$vendor->description}}</p>
+                    <p style="font-size:16px;" class="card-text">{{$vendor->description}}</p>
                 </div>
             </div>
         </div>
