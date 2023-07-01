@@ -16,6 +16,14 @@ class CartController extends Controller
             $user =  Auth::user();
            
             $meal = meal::find($id);
+           
+           $old_meal =  cart::where('meal_id',$id)->first();
+            if ($old_meal) {
+               $old_meal->quantity += $request->quantity ; 
+            
+               $old_meal->save();
+               return redirect()->back()->with('success', 'increasing quantity');
+            }
             $cart = new cart();
             $cart->name = $user->name;
             $cart->email = $user->email;
@@ -27,7 +35,7 @@ class CartController extends Controller
             $cart->image = $meal->image;
             $cart->meal_id = $meal->id;
             $cart->quantity = $request->quantity;
-            
+          
             $cart->save();
             return redirect()->back()->with('success', 'Meal add to cart successfully!');
         }

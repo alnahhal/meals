@@ -152,13 +152,26 @@
             </div>
         </nav>
         @endif
-
+        @if(session()->has('message'))
+    
+            <div class="alert alert-success alert-dismissible">
+               
+           
+            
+           {{session()->get('message')}}
+           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div> 
+       
+           
+        @endif
         <main>
             @yield('content')
         </main>
         
     </div>
     <script src="{{ asset('js/all.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 @yield('styles')
