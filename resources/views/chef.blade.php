@@ -9,10 +9,22 @@
 @section('content')
 
 
-<div class="section">
+<!-- <div class="section">
 <img src="photos/chefss.jpg" class="img-fluid" alt="background image">
+</div> -->
+<div class="containerfluid">
+    <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="back">
+    <div class="text">
+        <p>Chefs</p>
+    </div>
 </div>
-<div class="container my-5 text-center">
+
+    </div>
+</div>
+</div>
+<div class="container text-center box">
 
 <div class="header text-center">
   <h2>Chef</h2>
@@ -117,16 +129,33 @@
     padding: 0;
     overflow-x: hidden;
  }   
-.section {
-    width:100%;
-    height:630px;
-    margin-bottom:160px;
-}
 
-.section img {
-    width:100%;
-    height:100%;
+.back{
+    background-image:url('photos/chefss.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width:100% ;
+    height: 400px;
+    margin-top:0px;
+            
+ }
+.text{
+    position: relative;
+    text-align:center;
+    top:220px;
 }
+.text p{
+    color:white;
+    font-size: 3.8rem;
+    font-weight: bold;
+    text-shadow: -2px 2px 4px #000000;
+    text-shadow: #fd934d;
+    }
+    .box{
+        margin-top:190px;
+        margin-bottom:180px;
+    }
 .header {
   position: relative;
   

@@ -19,6 +19,17 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+       .navbar-nav .icon{
+        color:black;
+        font-weight: bold;
+        font-size:16px;
+        margin-left:13px;
+        margin-top:6px;
+}
+
+    </style>
 </head>
 
 <body>
@@ -45,7 +56,7 @@
                             <a class="nav-link icon" href="{{url('/chef')}}">Chefs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link icon" href="#">About</a>
+                            <a class="nav-link icon" href="{{url('/about')}}">About</a>
                         </li>
                     </ul>
 
@@ -111,7 +122,7 @@
                             <a class="nav-link icon" href="{{url('/chef')}}">Chefs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link icon" href="#">About</a>
+                            <a class="nav-link icon" href="{{url('/about')}}">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link icon" href="{{ route('dashboard') }}">Dashboard</a>

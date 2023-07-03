@@ -176,7 +176,7 @@
     color:black;
     font-weight: bold;
     font-size:16px;
-    margin-left:10px;
+    margin-left:13px;
     margin-top:6px;
 }
 

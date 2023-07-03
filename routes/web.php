@@ -28,6 +28,10 @@ Route::get('dashboard', function()
 
 Route::get('chef',[App\Http\Controllers\ChefController::class, 'index']);
 
+Route::get('about',function(){
+    return view('about');
+});
+
 
 
 
