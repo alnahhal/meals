@@ -33,6 +33,11 @@ Route::get('about',function(){
 });
 
 
+Route::get('profile',[App\Http\Controllers\UserController::class, 'showProfile']);
+
+
+
+
 
 
 Auth::routes();
