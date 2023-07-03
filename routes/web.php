@@ -35,10 +35,9 @@ Route::get('about',function(){
 
 Route::get('profile',[App\Http\Controllers\UserController::class, 'showProfile']);
 
+// password
 
-
-
-
+Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
 Auth::routes();
 

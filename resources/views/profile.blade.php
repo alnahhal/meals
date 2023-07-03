@@ -2,14 +2,6 @@
 
 @section('content')
 
-        <!-- <div class="col-sm-12 col-md-6 col-lg-4 my-3">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">{{$user->name}}</h3>
-                    <p class="card-text">{{$user->phone}}</p>
-                </div>
-            </div>
-        </div> -->
 
         <section class="vh-100" style="background-color: #eee;">
   <div class="container py-5 h-100">
