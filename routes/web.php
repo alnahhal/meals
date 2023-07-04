@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('vendors', App\Http\Controllers\VendorController::class);
-Route::resource('meals', App\Http\Controllers\MealController::class);
+Route::resource('vendors', App\Http\Controllers\VendorController::class)->middleware(CheckUser::class);
+Route::resource('meals', App\Http\Controllers\MealController::class)->middleware(CheckUser::class);
 
 Route::get('dashboard', function() 
 {
     return view('admin');
-})->name('dashboard');
+})->name('dashboard')->middleware(CheckUser::class);
 
 
 Route::get('chef',[App\Http\Controllers\ChefController::class, 'index']);
@@ -33,7 +34,6 @@ Route::get('about',function(){
 });
 
 
-Route::get('profile',[App\Http\Controllers\UserController::class, 'showProfile']);
 
 // password
 

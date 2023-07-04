@@ -90,8 +90,6 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <!-- profile -->
-                                <a class="dropdown-item" href="{{url('/profile')}}">Profile</a>
                             </div>
                         </li>
                         @endguest
