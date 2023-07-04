@@ -29,6 +29,11 @@ Route::get('dashboard', function()
 
 Route::get('chef',[App\Http\Controllers\ChefController::class, 'index']);
 
+Route::get('unauthorized', function() 
+{
+    return view('unauthorized');
+})->name('unauthorized');
+
 Route::get('about',function(){
     return view('about');
 });
