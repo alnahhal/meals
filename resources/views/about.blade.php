@@ -168,7 +168,7 @@
             <div class="col-sm">
               <ul class="list-unstyled links">
                 <li><a href="/home">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/about">About</a></li>
                 <!-- <li><img src="{{asset('photos/traditional-lunch.jpg')}}" alt=""></li> -->
                 <a href="#" class="thumb-menu img" style="background-image: url('photos/traditional-lunch.jpg');width: 100%; height: 200px;
                 display: block;background-position: center;

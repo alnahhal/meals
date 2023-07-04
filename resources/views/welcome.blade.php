@@ -40,15 +40,28 @@
             .second{
                 box-shadow: 2px 2px 5px rgba(0.3, 0.3, 0.3, 0.3);
                 margin-top:85px;
-                width:498px;
+                /* width:498px; */
                 padding:5px 9px;
                 border-radius:3px;
                
             }
             .service{
-              margin-top:180px;
+              margin-top:160px;
               text-align:center;
               margin-bottom:100px;
+            }
+            .contact{
+              margin-top:165px;
+              /* margin:auto; */
+              margin-bottom:145px;
+            }
+            .third{
+                box-shadow: 2px 2px 5px rgba(0.3, 0.3, 0.3, 0.3);
+                margin-top:20px;
+                /* width:498px; */
+                padding:5px 9px;
+                border-radius:3px;
+               
             }
             .my-icon {
               font-size: 33px;
@@ -222,9 +235,9 @@
                     <h2  style="color:#d7973c;">Good Quality</h2>
                     <br>
                     <p>
-                    We offer you the finest types of food because we fear for your health,<br> we have many skilled chefs, we assure you that you will enjoy with us</p>
-                    Not every dish is going to appeal to the market. Not every theme is going to get a standing ovation. Not every flavour combination is going to be <br> an absolute winner. And that’s okay.
-                    What matters is that we tried, and we gave it our all.
+                    We offer you the finest types of food because we fear for your health, we have many skilled chefs, we assure you that you will enjoy with us.</p>
+                    Not every dish is going to appeal to the market, Not every theme is going to get a standing ovation, Not every flavour combination is going to be an absolute winner And that’s okay
+                   <br> What matters is that we tried, and we gave it our all.
                 </p>
                 </div>
             </div>
@@ -278,6 +291,32 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 my-2" >
+                    <img style="width:100%;height:100%;" src="photos/cook.jpg" alt="">
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 my-2" >
+                    <div class="third">
+                    <h2  style="color:#d7973c;">Contact Us</h2>
+                    <br>
+                    <p>
+                    If you are a good chef and want to start a job, contact us and we will be able to support you and deliver your dishes to people.<br>We will help you grow your project and sell your products professionally. We will communicate with you constantly and let you know the opinions of customers so that you can develop yourself. <br>
+                    <p><i class="fa-solid fa-phone mx-1" style="color: black;"></i> 01026549864</p>
+                    <p><i class="fa-solid fa-envelope mx-1" style="color: black;"></i> tastymeals02@gmail.com</p>
+                </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
         
 
         <!-- Footer -->
@@ -311,7 +350,7 @@
             </div>
             <div class="col-sm">
               <ul class="list-unstyled links">
-                <li><a href="/home">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <!-- <li><img src="{{asset('photos/traditional-lunch.jpg')}}" alt=""></li> -->
                 <a href="#" class="thumb-menu img" style="background-image: url('photos/traditional-lunch.jpg');width: 100%; height: 200px;
