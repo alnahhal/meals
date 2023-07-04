@@ -98,7 +98,7 @@
                 <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
               </ul>
               <p><i class="fa-solid fa-phone mx-1" style="color: #ffffff;"></i> 01026549864</p>
-              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> tastymeals02@gmail.com</p>
+              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> meals3167@gmail.com</p>
             </div>
             
           </div>

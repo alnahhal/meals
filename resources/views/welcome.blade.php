@@ -308,7 +308,7 @@
                     <p>
                     If you are a good chef and want to start a job, contact us and we will be able to support you and deliver your dishes to people.<br>We will help you grow your project and sell your products professionally. We will communicate with you constantly and let you know the opinions of customers so that you can develop yourself. <br>
                     <p><i class="fa-solid fa-phone mx-1" style="color: black;"></i> 01026549864</p>
-                    <p><i class="fa-solid fa-envelope mx-1" style="color: black;"></i> tastymeals02@gmail.com</p>
+                    <p><i class="fa-solid fa-envelope mx-1" style="color: black;"></i> meals3167@gmail.com</p>
                 </p>
                 </div>
             </div>
@@ -369,7 +369,7 @@
                 <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
               </ul>
               <p><i class="fa-solid fa-phone mx-1" style="color: #ffffff;"></i> 01026549864</p>
-              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> tastymeals02@gmail.com</p>
+              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> meals3167@gmail.com</p>
             </div>
             
           </div>
