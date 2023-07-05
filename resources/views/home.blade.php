@@ -191,10 +191,15 @@
   font-size:15px;
 }
 .price{
-  font-size:16.5px;
+  font-size:22px;
+
 }
 .time{
   font-size:16.5px;
+}
+.card-text{
+  font-size:15px;
+  
 }
 
 
