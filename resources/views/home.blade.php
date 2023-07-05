@@ -179,6 +179,18 @@
     margin-left:13px;
     margin-top:6px;
 }
+.card-title{
+  font-size:35px;
+  text-align:center;
+  color: #714507;
+  
+}
+.card-item{
+  font-weight:600;
+  color: #714507;
+  font-size:15px;
+}
+
 
 
 .footer-20192 {
