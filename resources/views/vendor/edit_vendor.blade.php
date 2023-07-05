@@ -1,18 +1,12 @@
 @extends('layouts.app')
 
 <style>
-.bgfull {
-    background-image: url("/web_images/vendor.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 10px;
-}
 
 .myForm {
     padding: 16px;
-    background-color: #DBF9FC;
+    background-color: #A7D0EA;
     border-radius: 10px;
+    height: 100%;
 }
 </style>
 
@@ -21,10 +15,12 @@
     <br>
     <h2>Update Vendor</h2>
     <div class="row">
-        <div class="col-lg-5 bgfull me-3">
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src="/web_images/vendor.png" class="img-fluid" alt="Vendor Logo"/>
         </div>
 
-        <div class="col-lg-6 myForm">
+        <div class="col-lg-6 col-md-6 col-sm-12 myForm">
             {!! Form::model($vendor, ['route' => ['vendors.update', $vendor], 'method' => 'put']) !!}
             <div class="mb-3">
                 {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}

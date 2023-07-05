@@ -3,7 +3,11 @@
 @section('content')
 <div class="container">
     <br>
-    <h4>List of Vendors ' Meals</h4>
+    <h4 style="display:inline;">List of Vendors ' Meals</h4>
+    <a href="{{route('vendors.index')}}" class="btn btn-success" style="float: right;">Back to Vendor's List</a>
+    <br>
+    <br>
+    <div class="table-responsive">
     <table class="table table-striped table-bordred table-hover align-middle"
         style="text-align:center; border-radius:10px; overflow: hidden;">
         <thead class="table-dark">
@@ -26,7 +30,7 @@
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td><img width="100px" height="100px" src="{{asset('/storage/'.$meal->image)}}"
-                        style="border-radius:10px;" /></td>
+                        style="border-radius:10px;" alt="Meal Image"/></td>
                 <td>{{$meal->title}}</td>
                 <td>{{$meal->description}}</td>
                 <td>{{$meal->price}}</td>
@@ -40,7 +44,7 @@
                     <form action="{{ route('meals.destroy', $meal) }}" method="post">
                         @csrf
                         @method('delete')
-                        <input type="submit" value="Delete" class="btn btn-danger" style="margin-top:5px;">
+                        <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
                 </td>
             </tr>
@@ -49,5 +53,6 @@
             @endforeach
         </tbody>
     </table>
+</div>
 </div>
 @endsection

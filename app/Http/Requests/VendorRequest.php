@@ -27,7 +27,7 @@ class VendorRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
-            'phone' => ['required', 'numeric', Rule::unique('vendors')->ignore($this->vendor), 'min_digits:10'],
+            'phone' => ['required', 'numeric', Rule::unique('vendors')->ignore($this->vendor), 'digits:10'],
             'description' => 'required',
         ];
     }

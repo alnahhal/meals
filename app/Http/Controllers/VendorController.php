@@ -88,12 +88,12 @@ class VendorController extends Controller
      */
     public function destroy($id)
     {
-        Vendor::destroy($id);
-        // $vendor = Vendor::find($id);
-        // if ($vendor->meal()->count() > 0) {
-        //     return back()->with('error', 'can not delete');
-        // }
-        // $vendor->delete();
+        // Vendor::destroy($id);
+        $vendor = Vendor::find($id);
+        if ($vendor->meal()->count() > 0) {
+            return back()->with("error", "Can't delete this vendor, there are related meals to this vendor");
+        }
+        $vendor->delete();
         return back()->with('success', 'Vendor has been deleted successfully');
     }
 }

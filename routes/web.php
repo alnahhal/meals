@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::resource('vendors', App\Http\Controllers\VendorController::class);
 Route::resource('meals', App\Http\Controllers\MealController::class);
+Route::resource('users', App\Http\Controllers\UserController::class);
 
 Route::get('dashboard', function() 
 {

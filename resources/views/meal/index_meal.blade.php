@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <style>
-h5 {
+.meal-title {
     font-size: 22px;
     text-align: center;
     font-weight: bold;
@@ -14,18 +14,18 @@ h5 {
 }
 
 .price {
-    font-size: 25px;
+    font-size: 30px;
 }
 </style>
 
 @section('content')
+<br>
 <div class="container">
     @if (session()->has('success'))
     <div class="alert alert-success">
         {{ session('success')}}
     </div>
     @endif
-    <br>
     <h4 style="display:inline;"> List of All Meals</h4>
     <a href="{{route('meals.create')}}" class="btn btn-success" style="float: right;">Add New Meal</a>
     <br>
@@ -35,11 +35,11 @@ h5 {
         <div class="col">
             <div class="card h-100">
                 <img height="250px" width="100px" src="{{asset('/storage/'.$meal->image)}}" class="card-img-top"
-                    alt="...">
+                    alt="Meal Image">
                 <div class="card-body">
-                    <h5 class="card-title">{{$meal->title}}</h5>
+                    <h5 class="card-title meal-title">{{$meal->title}}</h5>
                     <p class="card-text"><span class="card-item">Price:</span> <span
-                            class="price">{{$meal->price}}</span> <b>ج.م</b></p>
+                            class="price">{{$meal->price}}</span> <b>EGP</b></p>
                     <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
                     <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                     <p><span class="card-item">Vendor Name:</span> {{$meal->vendor->name}} </p>
