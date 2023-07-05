@@ -47,8 +47,8 @@
                 <div class="card-body">
                     <h3 class="card-title">{{$meal->title}}</h3>
                     <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
-                    <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
-                    <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
+                    <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</span></p>
+                    <p class="time"><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                 </div>
             </div>
         </div>
@@ -190,6 +190,14 @@
   color: #714507;
   font-size:15px;
 }
+.price{
+  font-size:16.5px;
+}
+.time{
+  font-size:16.5px;
+}
+
+
 
 
 
