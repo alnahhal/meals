@@ -41,4 +41,9 @@ class OrderController extends Controller
     
      
     }
+    public function show_orders(){
+
+
+
+    }
 }

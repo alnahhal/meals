@@ -14,7 +14,11 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -24,9 +28,9 @@
     @if (auth()->check() && auth()->user()->is_admin == 0)
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <p class="navbar-brand" >
                 <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
-                </a>
+                </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,12 +48,17 @@
                             <a class="nav-link icon" href="#">Contact</a>
                         </li>
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ms-auto">
-                        <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
-                        </a>
+                     {{--  ///////////////////////////////////////////  --}}
+                     <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
+                    </a>
+                    
+
+                     {{--  /////////////////////////////////////////////  --}}
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -91,9 +100,9 @@
        
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <p class="navbar-brand" >
                 <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
-                </a>
+                </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -156,16 +165,29 @@
         @endif
 
         @if(session('success'))
-        <div class="alert alert-success">
+        <div class="box" style="">
+            
+       
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="">
+           
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         
+        
           {{ session('success') }}
-        </div> 
+        </div>
+    </div>
         @endif
         <main>
             @yield('content')
         </main>
-        
+      
     </div>
+   
+    
     <script src="{{ asset('js/all.js') }}"></script>
+   
+ 
+    
 </body>
 </html>
 @yield('styles')

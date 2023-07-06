@@ -14,16 +14,18 @@ class CartController extends Controller
     public function addToCart (Request $request ,$id){
         if(Auth::id()){
             $user =  Auth::user();
-           
             $meal = meal::find($id);
-           
-           $old_meal =  cart::where('meal_id',$id)->first();
-            if ($old_meal) {
-               $old_meal->quantity += $request->quantity ; 
-            
-               $old_meal->save();
-               return redirect()->back()->with('success', 'increasing quantity');
-            }
+                    $cart = new cart();
+                   $old_meal =  cart::where('meal_id',$id)->first();
+                    if ($old_meal) {
+                       $old_meal->quantity += $request->quantity ; 
+                       $cart->price = $meal->price * $request->quantity;
+                    
+                       $old_meal->save();
+                       return redirect()->back()->with('success', 'increasing quantity');
+              }
+                   
+            $meal = meal::find($id);
             $cart = new cart();
             $cart->name = $user->name;
             $cart->email = $user->email;
@@ -35,16 +37,16 @@ class CartController extends Controller
             $cart->image = $meal->image;
             $cart->meal_id = $meal->id;
             $cart->quantity = $request->quantity;
-          
+
             $cart->save();
             return redirect()->back()->with('success', 'Meal add to cart successfully!');
         }
         else {
             return redirect('login'); 
         } 
-        
+
     }
- 
+
     public function show_cart(){
         $id = Auth::user()->id;
         $cart = Cart::where('user_id',$id)->get();
@@ -55,9 +57,9 @@ class CartController extends Controller
 
         $cart=cart::find($id);
         $cart->delete();
-       
+
         return redirect()->back();
-        
+
        }
 
 }

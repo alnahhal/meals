@@ -29,11 +29,15 @@
                     <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
                     <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                     <br>
+                   
+                     
+                    
                     <form action="{{route('add_to_cart',$meal->id)}}" method="POST">
                       @csrf
                       <input class="btn btn-danger" type="number"  value="1" name="quantity"  min="1">
                       <input type="submit" value="Order Now" class="btn btn-primary click">
                   </form>
+                 
                 </div>
             </div>
         </div>

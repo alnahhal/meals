@@ -47,7 +47,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                    
+
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -86,7 +86,7 @@
         </nav>
         @endif
         @if (auth()->check() && auth()->user()->is_admin == 1)
-       
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -152,26 +152,13 @@
             </div>
         </nav>
         @endif
-        @if(session()->has('message'))
-    
-            <div class="alert alert-success alert-dismissible">
-               
-           
-            
-           {{session()->get('message')}}
-           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        </div> 
-       
-           
-        @endif
+
         <main>
             @yield('content')
         </main>
-        
+
     </div>
     <script src="{{ asset('js/all.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 @yield('styles')
