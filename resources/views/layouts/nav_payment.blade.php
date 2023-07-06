@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+   
     <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
 
 
@@ -26,7 +28,7 @@
 <body>
     <div id="app">
     @if (auth()->check() && auth()->user()->is_admin == 0)
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm  " style="font-size: 20px">
             <div class="container">
                 <p class="navbar-brand" >
                 <span style="color:black;font-size:2.2rem;font-weight: bold;letter-spacing: 2px;">Meals</span>
@@ -35,7 +37,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse "  id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -53,7 +55,7 @@
 
                     <ul class="navbar-nav ms-auto">
                      {{--  ///////////////////////////////////////////  --}}
-                     <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
+                     <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger"  >
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
                     </a>
                     
@@ -81,11 +83,11 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();" >
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" style="font-size: 20px" >
                                         @csrf
                                     </form>
                                 </div>
@@ -164,19 +166,7 @@
         </nav>
         @endif
 
-        @if(session('success'))
-        <div class="box" style="">
-            
-       
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="">
-           
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-         
-        
-          {{ session('success') }}
-        </div>
-    </div>
-        @endif
+
         <main>
             @yield('content')
         </main>

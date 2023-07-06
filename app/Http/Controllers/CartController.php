@@ -19,9 +19,10 @@ class CartController extends Controller
                    $old_meal =  cart::where('meal_id',$id)->first();
                     if ($old_meal) {
                        $old_meal->quantity += $request->quantity ; 
-                       $cart->price = $meal->price * $request->quantity;
+                       $old_meal->price = $meal->price *$old_meal->quantity;
                     
                        $old_meal->save();
+                    
                        return redirect()->back()->with('success', 'increasing quantity');
               }
                    

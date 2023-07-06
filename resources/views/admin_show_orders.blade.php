@@ -30,7 +30,7 @@
                    <th>Delivered</th>
                   
                 </tr>
-                
+               
                 @foreach($order as $order)
    
    
@@ -63,10 +63,49 @@
 
                 </td>
                 </tr>
-            
+                
                 @endforeach  
-   
+               
             </table>
+
+    <h3>Total Price for each user </h3>
+
+
+<div class="contanier">
+    <div class="m-4">
+       <table class="table table-hover table-bordered ">
+           <tr class="table-danger">
+              <th>id</th>
+              <th>name</th>
+              <th>email</th>
+              <th>phone</th>
+              <th>address</th>
+              <th>Totalprice</th>
+             
+             
+           </tr>
+         
+            
+           @foreach ($totals as $total)
+
+           <tr >
+            <td  style="  text-align: center;   padding: 70px 0;">{{$total->user_id}}</td>
+              <td  style="  text-align: center;   padding: 70px 0;">{{$total->name}}</td>
+              <td style="  text-align: center;  padding: 70px 0;">  {{$total->email}}</td>
+              <td style="  text-align: center;  padding: 70px 0;">  {{$total->phone}}</td>
+              <td style="  text-align: center;  padding: 70px 0;">  {{$total->address}}</td>
+              <td style="  text-align: center;  padding: 70px 0;"> {{$total->total_price}}  EGP</td>
+             
+
+           </tr>
+           @endforeach
+          
+       </table>
+       
+{{--  // Loop through the results and output the totals
+foreach ($totals as $total) {
+    echo "User ID: " . $total->user_id . ", Total Price: " . $total->total_price . "<br>";
+}  --}}
 
 
     </div>

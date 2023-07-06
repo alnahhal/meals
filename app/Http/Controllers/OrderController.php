@@ -42,10 +42,15 @@ class OrderController extends Controller
      
     }
     public function show_orders(){
+     // Get all the carts grouped by user_id and sum the prices
+         $totals = Order::selectRaw('user_id,email,name,address,phone ,sum(price)  as total_price')
+          ->groupBy('user_id','email','address','name','phone')
+            ->get();
 
+   
      $order = Order::all();
 
-       return view('admin_show_orders',compact('order'));
+       return view('admin_show_orders',compact('order','totals'));
 
     }
     public function delivered($id){

@@ -1,9 +1,10 @@
 
-@extends('layouts.app')
+@extends('layouts.nav_payment')
 
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="/public">
     <title>Payment card</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,14 +16,16 @@
     }    
 </style>
 <body>
+{{--  /////////////////////////////////  --}}
 
+{{--  ////////////////////////////////////////  --}}
   @section( 'content')
   
-<div class="container" style="width: 60%">
+<div class="container " style="width: 70% ;margin-top: 30px">
     
     <h1 class="text-center">Pay Using Card  - Total Price {{$totalprice}} EGP </h1>
     
-    <div class="row">
+    <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md-7 col-md-offset-3">
             <div class="panel panel-default credit-card-box">
                 <div class="panel-heading display-table" >
@@ -44,18 +47,18 @@
                             class="require-validation"
                             data-cc-on-file="false"
                             data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
-                            id="payment-form">
+                            id="payment-form" >
                         @csrf
     
-                        <div class='form-row row'>
+                        <div class='form-row row' >
                             <div class='col-xs-12 form-group required'>
                                 <label class='control-label'>Name on Card</label> 
-                                <input class='form-control' size='4' type='text'>
+                                <input class='form-control ' size='4' type='text'>
                             </div>
                         </div>
     
                         <div class='form-row row'>
-                            <div class='col-xs-12 form-group card required'>
+                            <div class='col-xs-12 form-group  required'>
                                 <label class='control-label'>Card Number</label> 
                                 <input autocomplete='off' class='form-control card-number' size='20' type='text'>
                             </div>
@@ -96,7 +99,7 @@
 </div>
 @endsection   
 </body>
- @section( 'scripts')
+
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     
 <script type="text/javascript">
