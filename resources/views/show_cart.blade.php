@@ -11,6 +11,7 @@
 </head>
 <body>
    @section( 'content')
+
      <div class="contanier">
       <div class="m-4">
          <table class="table table-hover table-bordered ">

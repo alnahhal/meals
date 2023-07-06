@@ -168,7 +168,7 @@
         <div class="box" style="">
             
        
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="">
            
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
          

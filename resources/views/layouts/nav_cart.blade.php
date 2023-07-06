@@ -152,7 +152,19 @@
             </div>
         </nav>
         @endif
-
+        @if(session()->has('message'))
+        <div class="box" style="">
+            
+       
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="">
+           
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         
+        
+          {{ session()->get('message') }}
+        </div>
+     </div>
+        @endif
         <main>
             @yield('content')
         </main>

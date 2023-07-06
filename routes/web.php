@@ -36,3 +36,4 @@ Route::get('/cash_order', [OrderController::class, 'cash_order'])->name('cash_or
 Route::get('/stripe/{totalprice}', [StripeController::class, 'stripe'])->name('stripe');
 Route::post('/stripe/{totalprice}', [StripeController::class, 'stripePost'])->name('stripe.post');
 Route::get('/order', [OrderController::class, 'show_orders'])->name('show_orders');
+Route::get('/delivered/{id}', [OrderController::class, 'delivered'])->name('delivered');

@@ -43,7 +43,17 @@ class OrderController extends Controller
     }
     public function show_orders(){
 
+     $order = Order::all();
 
+       return view('admin_show_orders',compact('order'));
 
+    }
+    public function delivered($id){
+      $order = Order::find($id);
+      $order->delivery_status="delivered";
+      $order->payment_status="paid";
+      $order->save();
+      return redirect()->back();
+      
     }
 }
