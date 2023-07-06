@@ -77,7 +77,7 @@ class VendorController extends Controller
     public function update(VendorRequest $request, Vendor $vendor)
     {
         if ($vendor->update($request->all()))
-        return to_route('vendors.index');
+        return to_route('vendors.index')->with('success', 'Vendor has been updated successfully');
     }
 
     /**

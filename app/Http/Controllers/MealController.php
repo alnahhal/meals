@@ -114,7 +114,7 @@ class MealController extends Controller
         }
 
         if ($meal->save())
-        return to_route('meals.index');
+        return to_route('meals.index')->with('success', 'Meal has been updated successfully');;
     }
 
     /**

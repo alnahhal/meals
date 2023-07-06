@@ -2,11 +2,10 @@
 
 @section('content')
 <div class="container">
-
+<br>
     @if (session()->has('success'))
     <div class="alert alert-success">
         {{ session('success')}}
-        {{ session('error')}}
     </div>
     @endif
     @if (session()->has('error'))
