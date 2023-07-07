@@ -15,21 +15,18 @@
         margin:80px auto;
     }    
 </style>
-<body>
-    {{--  <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
-       Back To Cart 
-    </a>  --}}
+<body  style="background-image: url(photos/background.jpg);  
+ background-position: center;
+background-size: cover;
+width:100% ;
+height: 600px;
+margin-top:0px;">
   
- 
-
-{{--  /////////////////////////////////  --}}
-
-{{--  ////////////////////////////////////////  --}}
   {{--  @section( 'content')  --}}
   
-<div class="container " style="width: 70% ;margin-top: 30px">
+<div class="container d-flex align-items-center justify-content-center " style="margin-top: 80px ">
     
-    <h1 class="text-center">Pay Using Card  - Total Price {{$totalprice}} EGP </h1>
+    <h1 class="text-center" style="color: white">Pay Using Card  - Total Price {{$totalprice}} EGP </h1>
     
     <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md-7 col-md-offset-3">
