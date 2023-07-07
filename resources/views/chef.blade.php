@@ -39,7 +39,7 @@
             <img height="250px" width="100px" src="photos/Gormet-cooking.jpg" class="card-img-top product-img" alt="...">
                 <div class="card-body">
                     <h2 style="color:#bb9661;" class="card-title">{{$vendor->name}}</h2>
-                    <p style="font-size:16px;" class="card-text">{{$vendor->description}}</p>
+                    <p class="desc" style="font-size:16px;" class="card-text">{{$vendor->description}}</p>
                 </div>
             </div>
         </div>
@@ -183,6 +183,9 @@
 }
 .card{
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.desc{
+  text-align: left;
 }
 
 .footer-20192 {
