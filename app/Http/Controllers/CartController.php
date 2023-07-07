@@ -13,14 +13,15 @@ class CartController extends Controller
 {
     public function addToCart (Request $request ,$id){
         if(Auth::id()){
+            // ->where('user_id',auth()->user()->id)->first()
             $user =  Auth::user();
             $meal = meal::find($id);
                     $cart = new cart();
-                   $old_meal =  cart::where('meal_id',$id)->first();
+                   $old_meal =  cart::where('user_id', $user->id)->where('meal_id',$id)->first();
                     if ($old_meal) {
                        $old_meal->quantity += $request->quantity ; 
-                       $old_meal->price = $meal->price *$old_meal->quantity;
-                    
+                       $old_meal->price = $meal->price * $old_meal->quantity;
+                       $old_meal->user_id = $user->id;
                        $old_meal->save();
                     
                        return redirect()->back()->with('success', 'increasing quantity');
