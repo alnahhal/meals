@@ -32,7 +32,7 @@
                    
                      
                     
-                    <form action="{{route('add_to_cart',$meal->id)}}" method="POST">
+                    <form action="{{route('add_to_cart',$meal->id)}}" method="POST" id='ajax-form'>
                       @csrf
                       <input class="btn btn-danger" type="number"  value="1" name="quantity"  min="1">
                       <input type="submit" value="Order Now" class="btn btn-primary click">
@@ -235,3 +235,30 @@
         
     </style>
 @endsection
+{{--  
+@section('scripts')
+
+<script>
+$('#ajax-form').submit(function(event) {
+  // Prevent default form submission behavior
+  event.preventDefault();
+
+  // Serialize the form data into an object
+  var formData = $(this).serialize();
+
+  // Send an AJAX request to the server
+  $.ajax({
+      url: $(this).attr('action'),
+      method: $(this).attr('method'),
+      data: formData,
+      success: function(response) {
+          console.log(response);
+          // Do something with the response
+      },
+      error: function(xhr, status, error) {
+          console.log(error);
+      }
+  });
+});
+</script>
+@endsection  --}}

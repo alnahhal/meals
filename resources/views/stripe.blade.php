@@ -1,5 +1,5 @@
 
-@extends('layouts.nav_payment')
+{{--  @extends('layouts.nav_payment')  --}}
 
 <!DOCTYPE html>
 <html>
@@ -16,10 +16,16 @@
     }    
 </style>
 <body>
+    {{--  <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
+       Back To Cart 
+    </a>  --}}
+  
+ 
+
 {{--  /////////////////////////////////  --}}
 
 {{--  ////////////////////////////////////////  --}}
-  @section( 'content')
+  {{--  @section( 'content')  --}}
   
 <div class="container " style="width: 70% ;margin-top: 30px">
     
@@ -85,9 +91,14 @@
                         </div>
     
                         <div class="row">
-                            <div class="col-xs-12">
-                                <button class="btn btn-danger btn-lg btn-block" type="submit">Pay Now </button>
+                            <div class="col-xs-6">
+                                <button class="btn btn-danger  btn-block" type="submit">Pay Now </button>
                             </div>
+                            <div class="col-xs-6">
+                                <a href="{{route('home')}}"  id="dLabel"  class="btn btn-danger btn-block" >
+                                    Back To Home
+                                 </a>
+                               </div>
                         </div>
                             
                     </form>
@@ -97,7 +108,7 @@
     </div>
         
 </div>
-@endsection   
+{{--  @endsection     --}}
 </body>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
