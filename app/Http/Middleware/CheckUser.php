@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
+
 class CheckUser
 {
     /**
@@ -17,7 +18,8 @@ class CheckUser
     public function handle(Request $request, Closure $next)
     {
        if (auth()->user()->is_admin == 0) {
-       return response ('unauthorized');
+    //    return response ('unauthorized');
+    return redirect()->route('unauthorized');
        } 
 
 

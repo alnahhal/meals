@@ -47,8 +47,8 @@
                 <div class="card-body">
                     <h3 class="card-title">{{$meal->title}}</h3>
                     <p class="card-text"><span class="card-item">Price:</span> <span class="price">{{$meal->price}}</span> <b>EGP</b></p>
-                    <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</p>
-                    <p><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
+                    <p class="card-text"><span class="card-item">Description:</span> <br>{{$meal->description}}</span></p>
+                    <p class="time"><span class="card-item">Preparation Time:</span> {{$meal->preparation_time}} <b>Minutes</b></p>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
             <div class="col-sm">
               <ul class="list-unstyled links">
                 <li><a href="/home">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/about">About</a></li>
                 <!-- <li><img src="{{asset('photos/traditional-lunch.jpg')}}" alt=""></li> -->
                 <a href="#" class="thumb-menu img" style="background-image: url('photos/traditional-lunch.jpg');width: 100%; height: 200px;
                 display: block;background-position: center;
@@ -110,7 +110,7 @@
                 <li><a href="#"><span class="fa-brands fa-instagram"></span></a></li>
               </ul>
               <p><i class="fa-solid fa-phone mx-1" style="color: #ffffff;"></i> 01026549864</p>
-              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> tastymeals02@gmail.com</p>
+              <p><i class="fa-solid fa-envelope mx-1" style="color: #ffffff;"></i> meals3167@gmail.com</p>
             </div>
             
           </div>
@@ -176,9 +176,34 @@
     color:black;
     font-weight: bold;
     font-size:16px;
-    margin-left:10px;
+    margin-left:13px;
     margin-top:6px;
 }
+.card-title{
+  font-size:35px;
+  text-align:center;
+  color: #714507;
+  
+}
+.card-item{
+  font-weight:600;
+  color: #714507;
+  font-size:15px;
+}
+.price{
+  font-size:22px;
+
+}
+.time{
+  font-size:16.5px;
+}
+.card-text{
+  font-size:15px;
+  
+}
+
+
+
 
 
 .footer-20192 {
