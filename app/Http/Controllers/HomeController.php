@@ -27,4 +27,6 @@ class HomeController extends Controller
         $meals = Meal::all();
         return view('home', compact('meals'));
     }
+
+    
 }

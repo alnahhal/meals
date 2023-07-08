@@ -12,10 +12,15 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+   
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
+
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -59,9 +64,17 @@
                             <a class="nav-link icon" href="{{url('/about')}}">About</a>
                         </li>
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ms-auto">
+                     {{--  ///////////////////////////////////////////  --}}
+                     <a href="{{route('show_cart')}}" style="margin-right: 15px" id="dLabel"  class="btn btn-danger" >
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
+                    </a>
+                    
+
+                     {{--  /////////////////////////////////////////////  --}}
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
@@ -170,12 +183,30 @@
             </div>
         </nav>
         @endif
+
+        {{--  @if(session('success'))
+        <div class="box" style="">
+            
+       
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="">
+           
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         
+        
+          {{ session('success') }}
+        </div>
+    </div>
+        @endif  --}}
         <main>
             @yield('content')
         </main>
-
     </div>
+   
+    
     <script src="{{ asset('js/all.js') }}"></script>
+   
+    @yield('scripts') 
+    
 </body>
 
 </html>

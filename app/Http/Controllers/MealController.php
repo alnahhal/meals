@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Meal;
+use App\Models\Cart;
 use App\Models\Vendor;
 use App\Http\Requests\MealRequest;
+use App\Models\User;
 
 class MealController extends Controller
 {
@@ -21,6 +24,8 @@ class MealController extends Controller
         return view('meal.index_meal', compact('meals'));
     }
 
+   
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -112,7 +117,6 @@ class MealController extends Controller
             // $path=$image->store('', ['disk' => 'public']);
             $meal['image']=$path;
         }
-
         if ($meal->save())
         return to_route('meals.index')->with('success', 'Meal has been updated successfully');;
     }
