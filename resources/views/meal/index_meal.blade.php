@@ -1,6 +1,6 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
-@section('content')
+
 <style>
 h5 {
   font-size:22px;
@@ -18,6 +18,8 @@ h5 {
   font-size:25px;
 }
 </style>
+@section('content')
+<br>
 <div class="container">
 @if (session()->has('success'))
 <div class="alert alert-success">

@@ -165,7 +165,7 @@
         </nav>
         @endif
 
-        @if(session('success'))
+        {{--  @if(session('success'))
         <div class="box" style="">
             
        
@@ -177,7 +177,7 @@
           {{ session('success') }}
         </div>
     </div>
-        @endif
+        @endif  --}}
         <main>
             @yield('content')
         </main>
